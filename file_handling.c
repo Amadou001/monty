@@ -12,6 +12,7 @@ file = fopen(file_name, "r");
 if (file == NULL)
 {
 fprintf(stderr, "Error: Can't open file %s\n", file_name);
+exit(EXIT_FAILURE);
 }
 while (fgets(line, sizeof(line), file) != NULL)
 {
