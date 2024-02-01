@@ -34,6 +34,7 @@ temp = temp->next;
 if (temp->n == 0)
 {
 fprintf(stderr, "L%d: division by zero", line_number);
+exit(EXIT_FAILURE);
 }
 temp->prev->n = temp->prev->n / temp->n;
 temp->prev->next = NULL;
