@@ -31,11 +31,8 @@ while (temp->next != NULL)
 {
 temp = temp->next;
 }
-if (temp->prev != NULL)
-{
 temp->prev->n = temp->prev->n - temp->n;
 temp->prev->next = NULL;
 top_of_stack = temp->prev;
 free(temp);
-}
 }
