@@ -14,7 +14,8 @@ instruction_t functions[] = {
 {"pint", pint},
 {"pop", pop},
 {"swap", swap},
-{"add", add}
+{"add", add},
+{"sub", sub}
 };
 opcode = strtok(line, " \t\n");
 operand_str = strtok(NULL, " \t\n");
@@ -30,7 +31,7 @@ fprintf(stderr, "L%d: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);
 }
 }
-for (i = 0; i < 5; i++)
+for (i = 0; i < 6; i++)
 {
 if (strcmp(opcode, functions[i].opcode) == 0)
 {
