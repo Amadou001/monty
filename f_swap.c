@@ -11,7 +11,8 @@ int n_temp;
 int element_number = 0;
 if (*head == NULL)
 {
-return;
+fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+exit(EXIT_FAILURE);
 }
 temp = *head;
 while (temp != NULL)
