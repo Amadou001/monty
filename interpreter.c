@@ -13,7 +13,8 @@ instruction_t functions[] = {
 {"push", push},
 {"pint", pint},
 {"pop", pop},
-{"swap", swap}
+{"swap", swap},
+{"add", add}
 };
 opcode = strtok(line, " \t\n");
 operand_str = strtok(NULL, " \t\n");
@@ -29,12 +30,12 @@ fprintf(stderr, "L%d: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);
 }
 }
-for (i = 0; i < 4; i++)
+for (i = 0; i < 5; i++)
 {
 if (strcmp(opcode, functions[i].opcode) == 0)
 {
 functions[i].f(&stack, (strcmp(opcode, "push") == 0) ? operand : line_number);
-return;  
+return;
 }
 else if (strcmp(opcode, "pall") == 0)
 {
