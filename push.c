@@ -9,5 +9,5 @@ stack_t *stack = NULL;
 stack_t *top_of_stack = NULL;
 void push(stack_t **head, unsigned int operand)
 {
-top_of_stack = nodeCreation(&stack, operand);
+top_of_stack = nodeCreation(head, operand);
 }
