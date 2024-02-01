@@ -42,6 +42,11 @@ else if (strcmp(opcode, "pall") == 0)
 pall(&top_of_stack);
 return;
 }
+else if (strcmp(opcode, "nop") == 0)
+{
+nop();
+return;
+}
 }
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 exit(EXIT_FAILURE);
