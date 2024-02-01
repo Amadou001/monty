@@ -6,7 +6,7 @@
  * @head: pointer to the stack
  * @line_number: line number inside the file
 */
-void div(stack_t **head, unsigned int line_number)
+void f_div(stack_t **head, unsigned int line_number)
 {
 stack_t *temp;
 int n = 0;

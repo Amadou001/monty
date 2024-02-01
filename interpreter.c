@@ -16,7 +16,7 @@ instruction_t functions[] = {
 {"swap", swap},
 {"add", add},
 {"sub", sub},
-{"div", div}
+{"div", f_div}
 };
 opcode = strtok(line, " \t\n");
 operand_str = strtok(NULL, " \t\n");
