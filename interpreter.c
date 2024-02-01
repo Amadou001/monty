@@ -9,8 +9,11 @@ void interpret(char *line, int line_number)
 {
 char *opcode, *operand_str;
 int operand = 0, i;
-instruction_t fonctions[] = {
-{"push", push}
+instruction_t functions[] = {
+{"push", push},
+{"pint", pint},
+{"pop", pop},
+{"swap", swap}
 };
 opcode = strtok(line, " \t\n");
 operand_str = strtok(NULL, " \t\n");
@@ -26,32 +29,19 @@ fprintf(stderr, "L%d: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);
 }
 }
-for (i = 0; i < 1; i++)
+for (i = 0; i < 4; i++)
 {
-if (strcmp(opcode, fonctions[i].opcode) == 0)
+if (strcmp(opcode, functions[i].opcode) == 0)
 {
-fonctions[i].f(&stack, operand);
+functions[i].f(&stack, (strcmp(opcode, "push") == 0) ? operand : line_number);
+return;  
 }
 else if (strcmp(opcode, "pall") == 0)
 {
 pall(&top_of_stack);
+return;
 }
-else if (strcmp(opcode, "pint") == 0)
-{
-pint(&stack, line_number);
 }
-else if (strcmp(opcode, "pop") == 0)
-{
-pop(&stack, line_number);
-}
-else if (strcmp(opcode, "swap") == 0)
-{
-swap(&stack, line_number);
-}
-else
-{
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 exit(EXIT_FAILURE);
-}
-}
 }
