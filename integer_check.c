@@ -8,7 +8,7 @@ int isInteger(char *operand_str)
 {
 while (*operand_str != '\0')
 {
-if (*operand_str == '.')
+if (*operand_str == '.' || !isdigit(*operand_str))
 {
 return (0);
 }
