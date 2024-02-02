@@ -33,5 +33,6 @@ temp = temp->next;
 }
 temp->prev->n *= temp->n;
 temp->prev->next = NULL;
+top_of_stack = temp->prev;
 free(temp);
 }
