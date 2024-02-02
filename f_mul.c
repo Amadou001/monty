@@ -16,7 +16,7 @@ fprintf(stderr, "L%d: can't mul, stack too short", line_number);
 exit(EXIT_FAILURE);
 }
 temp = *head;
-while (temp->next != NULL)
+while (temp != NULL)
 {
 n++;
 temp = temp->next;
